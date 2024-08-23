@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/app/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import MobileNavbar from "@/components/employerViewComponents/MobileNavbar";
+import Topbar from "@/components/employerViewComponents/Topbar";
+import Sidebar from "@/components/employerViewComponents/Sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +27,18 @@ export default function EmployerRootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className="grid lg:hidden">
+            <MobileNavbar />
+            {children}
+          </div>
+
+          <div className="hidden lg:flex lg:h-screen">
+            <Sidebar />
+            <div className="flex flex-col w-full">
+              <Topbar />
+              <div className="overflow-x-hidden overflow-y-auto h-full">{children}</div>
+            </div>
+          </div>
         </ThemeProvider>
       </body>
     </html>
