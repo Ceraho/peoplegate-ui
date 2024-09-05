@@ -8,6 +8,18 @@ export type jobType = {
   type: string;
 };
 
+export type employerJobType = {
+  id: number;
+  title: string;
+  desc: string;
+  location: string;
+  remote: string;
+  department: string;
+  type: string;
+  applicantCount: number;
+  isBookmarked: boolean;
+};
+
 export type VacantPositionType = {
   companyName: string;
   roleTitle: string;

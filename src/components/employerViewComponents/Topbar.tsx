@@ -11,6 +11,7 @@ import {
   Mail,
   Notebook,
   Rss,
+  Search,
 } from "lucide-react";
 import { Input } from "../ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
@@ -46,19 +47,14 @@ const avatarDropdownMenuItems: mainNavbarItem[] = [
 ];
 
 const Topbar = () => {
-  const { setTheme } = useTheme();
-  const [darkMode, setDarkMode] = useState(true);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    setTheme(darkMode ? "light" : "dark");
-  };
+  const { theme, setTheme } = useTheme();
 
   return (
     <div className="flex w-full justify-between border-b items-center min-h-14 px-4">
       {/* SEARCH FIELD */}
-      <div className="w-full grid place-items-center">
-        <Input placeholder="Search ..." className="w-1/4"></Input>
+      <div className="relative w-full md:w-64">
+        <Input type="text" placeholder="Search Anything..." className="pl-10" />
+        <Search className="absolute left-3 top-2.5 h-5 w-5 text-muted-foreground" />
       </div>
 
       {/* TOPBAR ITEMS */}
@@ -129,16 +125,20 @@ const Topbar = () => {
             <DropdownMenuLabel className="mt-4">Appearance</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuCheckboxItem
-              checked={!darkMode}
-              disabled={!darkMode}
-              onCheckedChange={toggleDarkMode}
+              checked={theme === "light"}
+              disabled={theme === "light"}
+              onCheckedChange={() => {
+                setTheme("light");
+              }}
             >
               Light Mode
             </DropdownMenuCheckboxItem>
             <DropdownMenuCheckboxItem
-              checked={darkMode}
-              disabled={darkMode}
-              onCheckedChange={toggleDarkMode}
+              checked={theme === "dark"}
+              disabled={theme === "dark"}
+              onCheckedChange={() => {
+                setTheme("dark");
+              }}
             >
               Dark Mode
             </DropdownMenuCheckboxItem>

@@ -27,11 +27,13 @@ export default function EmployerRootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="grid lg:hidden">
+          {/* MOBILE VIEW */}
+          <div className="flex flex-col lg:hidden">
             <MobileNavbar />
             {children}
           </div>
 
+          {/* DESKTOP VIEW */}
           <div className="hidden lg:flex lg:h-screen">
             <Sidebar />
             <div className="flex flex-col w-full">

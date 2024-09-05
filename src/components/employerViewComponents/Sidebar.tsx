@@ -71,7 +71,7 @@ const Sidebar = () => {
   const currentRoute = usePathname();
 
   return (
-    <div className="flex flex-col gap-2 border border-y-0 h-screen min-w-80">
+    <div className="flex flex-col gap-2 border border-y-0 h-screen min-w-60">
       <div className="text-xl text-primary border-b min-h-14 grid place-items-center">
         PEOPLEGATE
       </div>
@@ -82,7 +82,7 @@ const Sidebar = () => {
               key={item.id}
               variant="ghost"
               className={cn("justify-start w-full", [
-                currentRoute.endsWith(item.link) && "bg-accent",
+                currentRoute.includes(item.link) && "bg-accent",
               ])}
             >
               <span className="mr-3">{item.icon}</span>

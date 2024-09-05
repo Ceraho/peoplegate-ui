@@ -53,14 +53,14 @@ const subbarItems: mainNavbarItem[] = [
   },
 ];
 
-const MobileSubbar = () => {
+const MobileSubbar = ({ subbarItems }: {subbarItems: mainNavbarItem[]}) => {
   const currentRoute = usePathname();
   
   return (
     //   SUBBAR COMPONENT
-    <div className="border-t h-12 flex items-center justify-between px-4 lg:hidden sticky bottom-0 bg-background">
+    <div className="border-t h-12 flex items-center lg:hidden sticky bottom-0 bg-background w-full">
       {/* SUBBAR ITEMS */}
-      <div className="flex gap-2 place-items-center">
+      <div className="flex justify-between w-full px-4">
         {subbarItems.map((item) => (
           <Link href={item.link}>
             <Button

@@ -2,51 +2,32 @@ import "@/app/globals.css";
 import MobileSubbar from "@/components/employerViewComponents/MobileSubbar";
 import Subbar from "@/components/employerViewComponents/Subbar";
 import { mainNavbarItem } from "@/types/types";
-import {
-  Calendar,
-  CalendarClock,
-  CheckCheck,
-  Eye,
-  NotebookPen,
-  SquareActivity,
-} from "lucide-react";
+import { FolderCheck, List, Bookmark, Archive } from "lucide-react";
 
 const subbarItems: mainNavbarItem[] = [
   {
     id: 1,
-    title: "Overview",
-    link: "/dashboard/overview",
-    icon: <Eye />,
+    title: "All",
+    link: "/jobsz",
+    icon: <List />,
   },
   {
     id: 2,
-    title: "Calendar",
-    link: "/dashboard/calendar",
-    icon: <Calendar />,
+    title: "Subscribed",
+    link: "/jobsz",
+    icon: <Bookmark />,
   },
   {
     id: 3,
-    title: "Events",
-    link: "/dashboard/events",
-    icon: <CalendarClock />,
+    title: "Active",
+    link: "/jobsz",
+    icon: <FolderCheck />,
   },
   {
     id: 4,
-    title: "Evaluations",
-    link: "/dashboard/evaluations",
-    icon: <NotebookPen />,
-  },
-  {
-    id: 5,
-    title: "Tasks",
-    link: "/dashboard/tasks",
-    icon: <CheckCheck />,
-  },
-  {
-    id: 6,
-    title: "Activity",
-    link: "/dashboard/activity",
-    icon: <SquareActivity />,
+    title: "Archived",
+    link: "/jobsz",
+    icon: <Archive />,
   },
 ];
 
@@ -57,8 +38,8 @@ export default function DashboardLayout({
 }>) {
   return (
     <>
-      <div className="flex flex-col lg:hidden">
-        {children}
+      <div className="flex flex-col h-screen w-full lg:hidden">
+      <div className="overflow-y-auto h-screen">{children}</div>
         <MobileSubbar subbarItems={subbarItems} />
       </div>
 

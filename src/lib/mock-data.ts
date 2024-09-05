@@ -1,4 +1,4 @@
-import { jobType, VacantPositionType } from "@/types/types";
+import { jobType, VacantPositionType, employerJobType } from "@/types/types";
 
 export const defaultJobs: jobType[] = [
   {
@@ -59,3 +59,61 @@ export const vacantPositionData: VacantPositionType = {
   jobRequirements:
     "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci libero iste laborum nobis quia assumenda dolores architecto veniam inventore, ratione quidem vel magnam pariatur, illo doloribus fuga consequuntur unde quaerat.\n-Lorem,\n-Ipsum,\n-Dolor,\n-Sit,\n-Amet",
 };
+
+export const employerDefaultJobs: employerJobType[] = [
+  {
+    id: 1,
+    title: "Software Engineer",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur",
+    location: "EMEA",
+    remote: "Remote",
+    department: "Engineering",
+    type: "Internship",
+    applicantCount: 8,
+    isBookmarked: true,
+  },
+  {
+    id: 2,
+    title: "Marketing Manager",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur",
+    location: "Istanbul, Turkey",
+    remote: "Hybrid",
+    department: "Marketing",
+    type: "Full-Time",
+    applicantCount: 14,
+    isBookmarked: false,
+  },
+  {
+    id: 3,
+    title: "Product Designer",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur",
+    location: "Ankara, Turkey",
+    remote: "On-Site",
+    department: "Design",
+    type: "Part-Time",
+    applicantCount: 12,
+    isBookmarked: true,
+  },
+  {
+    id: 4,
+    title: "Data Analyst",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur",
+    location: "Talinn, Estonia",
+    remote: "Hybrid",
+    department: "Analytics",
+    type: "Full-Time",
+    applicantCount: 54,
+    isBookmarked: false,
+  },
+  {
+    id: 5,
+    title: "Sales Representative",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur",
+    location: "Istanbul, Turkey",
+    remote: "Remote",
+    department: "Sales",
+    type: "Part-Time",
+    applicantCount: 7,
+    isBookmarked: false,
+  },
+];
